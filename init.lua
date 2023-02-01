@@ -149,6 +149,19 @@ function moveRightThird()
     win:setFrame(f)
 end
 
+function moveLeftTwoThirds()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+
+    f.x = max.x
+    f.y = max.y
+    f.w = (max.w / 3) * 2
+    f.h = max.h
+    win:setFrame(f)
+end
+
 function moveRightTwoThirds()
     local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -244,10 +257,13 @@ end
 hs.hotkey.bind(matInsert(hyper, "Shift"), "D", mouseHighlight)
 
 hs.hotkey.bind(hyper, "Left", function()
-    moveLeftHalf()
+    moveLeftTwoThirds()
 end)
 hs.hotkey.bind(hyper, "Right", function()
-    moveRightHalf()
+    moveRightThird()
+end)
+hs.hotkey.bind(hyper, "Down", function()
+    moveMiddleThird()
 end)
 hs.hotkey.bind(hyper, "Up", function()
     maximise()
@@ -268,13 +284,13 @@ hs.hotkey.bind(hyper, "Pad7", function()
     moveTopLeft()
 end)
 hs.hotkey.bind(hyper, "Pad1", function()
-    moveBottomLeft()
+    moveLeftThird()
 end)
 hs.hotkey.bind(hyper, "Pad9", function()
     moveTopRight()
 end)
 hs.hotkey.bind(hyper, "Pad3", function()
-    moveBottomRight()
+    moveRightTwoThirds()
 end)
 hs.hotkey.bind(hyper, "Pad2", function()
     moveMiddleThirdBottomHalf()
