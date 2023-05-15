@@ -256,7 +256,7 @@ end
 
 hs.hotkey.bind(matInsert(hyper, "Shift"), "D", mouseHighlight)
 
-hs.hotkey.bind(hyper, "Left", function()
+hs.hotkey.bind(hyper, "Pad1", function()
     moveLeftTwoThirds()
 end)
 hs.hotkey.bind(hyper, "Right", function()
@@ -283,7 +283,7 @@ end)
 hs.hotkey.bind(hyper, "Pad7", function()
     moveTopLeft()
 end)
-hs.hotkey.bind(hyper, "Pad1", function()
+hs.hotkey.bind(hyper, "Left", function()
     moveLeftThird()
 end)
 hs.hotkey.bind(hyper, "Pad9", function()
